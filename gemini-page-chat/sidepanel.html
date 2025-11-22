@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: sans-serif; padding: 10px; width: 300px; }
+    
+    #chat-history { 
+      height: 380px; /* 入力欄が減った分、少し広げました */
+      overflow-y: scroll; 
+      border: 1px solid #ccc; 
+      margin-bottom: 10px; 
+      padding: 5px; 
+      background-color: #fff;
+    }
+    
+    .message { margin-bottom: 8px; padding: 8px; border-radius: 6px; font-size: 0.9em; line-height: 1.4; }
+    .user { background-color: #e3f2fd; text-align: right; margin-left: 20px; }
+    .ai { background-color: #f5f5f5; margin-right: 20px; }
+    
+    input, button, select { width: 100%; margin-bottom: 8px; box-sizing: border-box; padding: 8px; }
+    
+    /* モデル選択エリア */
+    #model-section { margin-bottom: 10px; }
+    label { font-size: 0.8em; color: #666; display: block; margin-bottom: 4px;}
+    
+    #send-btn { background-color: #0b57d0; color: white; border: none; cursor: pointer; font-weight: bold; }
+    #send-btn:hover { background-color: #0842a0; }
+  </style>
+</head>
+<body>
+  <h3>Gemini Page Chat</h3>
+  
+  <div id="model-section">
+    <label for="model-select">モデルを選択:</label>
+    <select id="model-select">
+      <option value="fast">Fast (Gemini 2.5 Flash)</option>
+      <option value="pro">Pro (Gemini 2.5 Pro)</option>
+    </select>
+  </div>
+
+  <div id="chat-history"></div>
+  
+  <input type="text" id="user-input" placeholder="ページについて質問...">
+  <button id="send-btn">送信</button>
+
+  <script src="config.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
